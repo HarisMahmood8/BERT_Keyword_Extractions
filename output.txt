@@ -1,0 +1,248 @@
+Keyword: Earnings
+Paragraph:
+ (NYSE:EFX) Q2 2023 Earnings Conference Call July 20, 2023 8:30 AM ET  Company Participants  Mark Begor - Chief Executive Officer  John Gamble - Chief Financial Officer  Trevor Burns - Senior Vice President, Head of Corporate Investor Relations  Conference Call Participants  Andrew Steinerman - JP Morgan  Manav Patnaik - Barclays  Kevin McVeigh - Credit Suisse  Kelsey Zhu - Autonomous Research  Kyle Peterson - Needham & Company  Andrew Jeffrey - Truist Securities  Jeff Meuler - Baird  Craig Huber - Huber Research Partners  Andrew Nicholas - William Blair  Shlomo Rosenbaum - Stifel  Heather Balsky - Bank of America  Toni Kaplan - Morgan Stanley  Ashish Sabadra - RBC Capital Markets  Seth Weber - Wells Fargo Securities  George Tong - Goldman Sachs  Operator  Greetings and welcome to the Equifax Second Quarter 2023 Earnings Conference Call.
+Sentiment: LABEL_1, Score: 0.5094714164733887
+
+Keyword: EPS
+Paragraph:
+  We will also be referring certain non-GAAP financial measures, including adjusted EPS attributable to Equifax and adjusted EBITDA, which will be adjusted for certain items that affect the comparability of our underlying operational performance.
+Sentiment: LABEL_0, Score: 0.5469156503677368
+
+Paragraph:
+ This restructuring charge is excluded from adjusted EBITDA, as well as adjusted EPS.
+Sentiment: LABEL_0, Score: 0.6539075374603271
+
+Paragraph:
+  In the quarter, we delivered adjusted EPS of $1.
+Sentiment: LABEL_0, Score: 0.6373401880264282
+
+Paragraph:
+  The impact of the lower mortgage revenue results in a reduction of our full year 2023 adjusted EPS guidance at the midpoint of $0.
+Sentiment: LABEL_0, Score: 0.6174967288970947
+
+Paragraph:
+ We remain focused on delivering EBITDA margins of 36% and over $2 in adjusted EPS per share in the fourth quarter, which we believe sets us up well for 2024 and beyond.
+Sentiment: LABEL_0, Score: 0.614953339099884
+
+Paragraph:
+  The BVS acquisition will add approximately $160 million of year one run rate revenue in the fast-growing Brazilian market, and we expect the transaction to be slightly accretive to year one adjusted EPS.
+Sentiment: LABEL_0, Score: 0.5960280895233154
+
+Paragraph:
+  As a reminder, I mentioned earlier, we expect Boa Vista to deliver approximately $160 million in run rate revenue to Equifax and to be accretive to adjusted EPS in the first year.
+Sentiment: LABEL_0, Score: 0.5940333008766174
+
+Paragraph:
+  Turning to Slide 14, as Mark referenced earlier, in the second quarter we exceeded our adjusted EBITDA margin and adjusted EPS guidance and delivered well against our 2023 spending reduction plan that will now deliver $210 million in spending reduction in ‘23 versus 2022 levels, including workforce reduction, closer to data centers and additional cost control measures.
+Sentiment: LABEL_0, Score: 0.5992897152900696
+
+Paragraph:
+  As revenue grows sequentially through the second half of ’23 and cloud and broader cost reductions accelerate, we are focused on delivering fourth quarter adjusted EBITDA margins of about 36% and adjusted EPS exceeding $2 per share in the fourth quarter.
+Sentiment: LABEL_0, Score: 0.6018697619438171
+
+Paragraph:
+ We're expecting adjusted EPS in 3Q’23 to be $1.
+Sentiment: LABEL_0, Score: 0.5833091735839844
+
+Paragraph:
+  As Mark also mentioned, we're reducing our adjusted EPS guidance for 2023 to the range of $6.
+Sentiment: LABEL_0, Score: 0.615490198135376
+
+Paragraph:
+ We believe that our full year guidance is centered at the midpoint of both our revenue and adjusted EPS guidance ranges.
+Sentiment: LABEL_0, Score: 0.6265846490859985
+
+Paragraph:
+ Wrapping up on slide 17, Equifax delivered a solid quarter with adjusted EBITDA margins and adjusted EPS above our guidance despite the challenging mortgage and hiring markets.
+Sentiment: LABEL_0, Score: 0.5930875539779663
+
+Paragraph:
+ USIS and international delivered strong quarters offsetting some weakness in the EWS Talent and Onboarding businesses, to allow us to deliver revenue at about the midpoint and EPS above guidance.
+Sentiment: LABEL_0, Score: 0.6307023763656616
+
+Paragraph:
+  We remain focused on delivering 36% adjusted EBITDA margins and over $2 per share in adjusted EPS in the fourth quarter, which sets us up well for 2024.
+Sentiment: LABEL_0, Score: 0.6135926246643066
+
+Paragraph:
+3 billion at the midpoint, with full year 2023 adjusted EPS at the midpoint to be down $0.
+Sentiment: LABEL_0, Score: 0.6098789572715759
+
+Paragraph:
+ I'm just trying to understand the lowering of the EPS guidance.
+Sentiment: LABEL_0, Score: 0.6479978561401367
+
+Paragraph:
+ It just seems to me like the midpoint of the guidance and the EPS was lower to a lot more than it needed to be.
+Sentiment: LABEL_0, Score: 0.6167717576026917
+
+Keyword: April
+Paragraph:
+7%, both above the guidance we provided in April.
+Sentiment: LABEL_0, Score: 0.6612842082977295
+
+Paragraph:
+ Since our April update, outside the challenging mortgage and hiring markets I already discussed, the U.
+Sentiment: LABEL_0, Score: 0.6342756748199463
+
+Paragraph:
+ Mortgage interest rates have trended upward since April and were slightly above 7% at the beginning of July and were just under 7% at the end of last week, which is clearly impacting originations.
+Sentiment: LABEL_0, Score: 0.6491666436195374
+
+Paragraph:
+ We expect mortgage originations, as I mentioned earlier, to further weaken in the second half with originations down about 37% in 2023 or 500 basis points weaker than our April framework.
+Sentiment: LABEL_0, Score: 0.5953783988952637
+
+Paragraph:
+ As I mentioned, overall market performance in the latter part of the quarter weakened relative to our expectations, resulting in lower mortgage revenue than we expected in our April framework.
+Sentiment: LABEL_0, Score: 0.6143782138824463
+
+Paragraph:
+5% were up 110 bips from first quarter and in line with our April guidance from strong operational execution.
+Sentiment: LABEL_0, Score: 0.6256915926933289
+
+Paragraph:
+  The strong pricing environment that we discussed in April, both from the addition of Telecom & Utilities attributes to our new mortgage credit solution and the increased pricing for credit scores drove the very strong out performance.
+Sentiment: LABEL_0, Score: 0.613409698009491
+
+Paragraph:
+  As shown on Slide 13, second quarter credit increase were down 33% and also in line with our April expectations.
+Sentiment: LABEL_0, Score: 0.6171993613243103
+
+Paragraph:
+  Applying normal seasonal patterns to the run rate we are seeing for mortgage credit inquiries in the end of June and early July, we expect mortgage credit inquiries to be down 31% for all of 2023, which is a slight reduction from our April guidance.
+Sentiment: LABEL_0, Score: 0.5657578110694885
+
+Paragraph:
+ This is about 5 percentage points weaker than the 32% we discussed in our April guidance for mortgage originations.
+Sentiment: LABEL_0, Score: 0.6212350726127625
+
+Paragraph:
+ This reduction in 2023 expected mortgage originations relative to our April guidance reduces Workforce Solutions revenue in the second half of 2023 by about $40 million.
+Sentiment: LABEL_0, Score: 0.575356662273407
+
+Paragraph:
+ As our expectation for USIS credit inquiries in the second half of 2023 is slightly weaker than our April guidance, USIS mortgage revenue did not change meaningfully.
+Sentiment: LABEL_0, Score: 0.5704835653305054
+
+Paragraph:
+ mortgage originations will decline 37% in ‘23, 5 percentage points more than our April guidance, reducing mortgage revenue by over $40 million in Workforce Solutions.
+Sentiment: LABEL_0, Score: 0.6260530352592468
+
+Paragraph:
+ We continue to expect non-mortgage constant currency revenue growth to be strong at above 8% in 2023, slightly stronger than our April guidance.
+Sentiment: LABEL_0, Score: 0.5956709980964661
+
+Paragraph:
+  As we discussed in April, we remain focused on delivering our midterm goal of $7 billion in revenue with 39% EBITDA margins.
+Sentiment: LABEL_0, Score: 0.6259166598320007
+
+Paragraph:
+ And this is up $10 million in ‘23 and $25 million in ‘24 from our April framework.
+Sentiment: LABEL_0, Score: 0.6837652921676636
+
+Paragraph:
+ I think in April we talked about the market being down like 10%.
+Sentiment: LABEL_0, Score: 0.6273007392883301
+
+Paragraph:
+ We didn't really give a number, but weaker than the 10% we talked about in April.
+Sentiment: LABEL_0, Score: 0.648223876953125
+
+Paragraph:
+  And as we said in February, in April, and again today, we're just seeing broader opportunities to improve our efficiencies as we get further into the cloud.
+Sentiment: LABEL_0, Score: 0.6086583733558655
+
+Paragraph:
+ You may remember we rolled out a solution called One Score in April that combines some of our differentiated data assets across USIS.
+Sentiment: LABEL_0, Score: 0.6151453256607056
+
+Keyword: Revenue
+Paragraph:
+ Revenue at $1.
+Sentiment: LABEL_0, Score: 0.6666421890258789
+
+Keyword: June
+Paragraph:
+ So the weaker mortgage market we saw in June had a much smaller impact on USIS than in EWS, where their mortgage activity is more aligned with closed loans.
+Sentiment: LABEL_0, Score: 0.6318798065185547
+
+Paragraph:
+  In June we received shareholder approval for the acquisition of Boa Vista Serviços, the second largest credit bureau in Brazil.
+Sentiment: LABEL_0, Score: 0.6149489879608154
+
+Paragraph:
+  Turning the Slide 10, we were very excited to receive shareholder approval for our new Boa Vista acquisition in late June.
+Sentiment: LABEL_0, Score: 0.581053614616394
+
+Paragraph:
+ However, as Mark mentioned, we saw weaker than expected inquiry data in June, which impacted our overall mortgage revenue for the quarter.
+Sentiment: LABEL_0, Score: 0.6099984049797058
+
+Paragraph:
+ As we look to the second half of 2023, our planning does not assume a fundamental improvement in the mortgage or housing markets from the levels we saw in late June and early July.
+Sentiment: LABEL_0, Score: 0.5880497097969055
+
+Paragraph:
+  Applying normal seasonal patterns to the run rate we are seeing for mortgage credit inquiries in the end of June and early July, we expect mortgage credit inquiries to be down 31% for all of 2023, which is a slight reduction from our April guidance.
+Sentiment: LABEL_0, Score: 0.5657578110694885
+
+Paragraph:
+ And we're energized about receiving shareholder approval for the BVS acquisition in June, and we're on track to close this strategic and financially attractive acquisition in early August.
+Sentiment: LABEL_0, Score: 0.5852974057197571
+
+Paragraph:
+ We said June was worse and that we're expecting that weaker level of the Talent Market to continue through the rest of the year.
+Sentiment: LABEL_0, Score: 0.6188768148422241
+
+Paragraph:
+  You point out one of the levers you know on the re-determination, we saw some of that activity pick up in May and June and we expect that to continue in third quarter and fourth quarter and much of that to be a 2023 event which is positive.
+Sentiment: LABEL_0, Score: 0.5620289444923401
+
+Paragraph:
+ You guys saw in June.
+Sentiment: LABEL_0, Score: 0.6167957186698914
+
+Keyword: flat
+Paragraph:
+ Inflation is starting to abate at 3% in July, which should mean we are approaching a peak in Fed interest rates.
+Sentiment: LABEL_0, Score: 0.6314966082572937
+
+Paragraph:
+  The consumer lending vertical and Workforce Solutions which includes P-Loan, card, auto and debt management was about flat sequentially, but down 11% versus last year to lower auto volumes with financial services and P-Loan declines with FinTech lenders, both principally in the subprime space.
+Sentiment: LABEL_0, Score: 0.6306620240211487
+
+Paragraph:
+ Strong revenue growth in fraud and header, as well as risk and account reviews was partially offset by declines in marketing, principally pre-screen marketing with IXI wealth revenue growth about flat.
+Sentiment: LABEL_0, Score: 0.6328986287117004
+
+Paragraph:
+ Corporate expenses for 3Q’23 are expected to be about flat with 2Q’23.
+Sentiment: LABEL_0, Score: 0.6759809255599976
+
+Paragraph:
+ EBITDA margins are expected to be about flat sequentially.
+Sentiment: LABEL_0, Score: 0.641532301902771
+
+Paragraph:
+  Mark Begor  Then at some point on the other side it is high inflationary environment where the feds had to raise interest rates.
+Sentiment: LABEL_0, Score: 0.6211711168289185
+
+Paragraph:
+ I think we're kind of already feeling it and seeing it with inflation down to 3%.
+Sentiment: LABEL_0, Score: 0.6210904717445374
+
+Keyword: Inflation
+Paragraph:
+ Inflation is starting to abate at 3% in July, which should mean we are approaching a peak in Fed interest rates.
+Sentiment: LABEL_0, Score: 0.6314966082572937
+
+Paragraph:
+ Inflation is starting to abate at 3% in July, which should mean we are approaching a peak in Fed interest rates.
+Sentiment: LABEL_0, Score: 0.6314966082572937
+
+Keyword: January
+Paragraph:
+  As you may remember back in January or February in the earnings call, we talked about a larger price increase in USIS related to one of our partners who has a credit score and everyone knows who I'm talking about, its FICO, who put through a price increase in both Equifax and Experian deliver that price increase to the marketplace when they increase the price of their credit score.
+Sentiment: LABEL_0, Score: 0.5277891159057617
+
