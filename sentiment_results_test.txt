@@ -1,0 +1,20 @@
+Paragraph: Equifax Inc. (NYSE:EFX) Q2 2023 Earnings Conference Call July 20, 2023 8:30 AM ET
+Keywords: Earnings
+Categories: Financial metric - All
+Sentiment Score: -0.2867729961872101
+
+Paragraph: Greetings and welcome to the Equifax Second Quarter 2023 Earnings Conference Call. At this time all participants are in a listen-only mode. A brief question-and-answer session will follow the formal presentation. [Operator Instructions]. As a reminder, this conference is being recorded.
+Keywords: Earnings
+Categories: Financial metric - All
+Sentiment Score: -0.13357385993003845
+
+Paragraph: In the quarter, we delivered adjusted EPS of $1.71 per share and adjusted EBITDA margins of 32.7%, both above the guidance we provided in April. Execution against our cloud and broader spending reduction programs was also very strong and drove the 350 basis points of margin expansion in the quarter. Revenue at $1.318 billion was close to the midpoint of guidance with USIS and International delivering strong quarters, both above our expectations.
+Keywords: Revenue
+Categories: Financial metric - All
+Sentiment Score: -0.17576634883880615
+
+Paragraph: Broadly, consumers are still strong and working with unemployment at historically low levels, and the market is resilient with roughly 10 million open jobs against 5 million people who are looking for jobs. Inflation is starting to abate at 3% in July, which should mean we are approaching a peak in Fed interest rates. Consumers are spending and borrowing with average credit card and personal loan balances back above pre-pandemic levels.
+Keywords: Inflation
+Categories: Macro
+Sentiment Score: -0.1950991451740265
+
