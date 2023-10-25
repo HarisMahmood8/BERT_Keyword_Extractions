@@ -22,7 +22,7 @@ def export_to_excel(data, file_name):
     sheet = res_workbook.active
     sheet.title = file_name
 
-    sheet.append(["Category", "Sentiment", "Paragraph", "Keywords"])
+    sheet.append(["Paragraph", "Sentiment", "Keywords", "Category"])
     for row_data in data:
         sheet.append(row_data)
 

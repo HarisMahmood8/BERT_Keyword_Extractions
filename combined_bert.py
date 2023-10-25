@@ -26,30 +26,21 @@ def analyze_sentiment(text):
 # Get dictionary of keywords and topics
 workbook = openpyxl.load_workbook("keywords_topics.xlsx")
 categories_dict = read_keyword_topics(workbook["Key Words_Topics"])
+keywords = [item for sublist in categories_dict.values() for item in sublist]
 
 # Create a list storing results, which will be used to create the excel output
 result_list = []
 
 # Process the document for sentiment
-for category in categories_dict:
-    category_items = 0
-    total_sentiment = 0.0
+for paragraph in doc.paragraphs:
+    text = paragraph.text
+    sentiment = analyze_sentiment(text)
 
-    keywords = categories_dict[category]
-    for paragraph in doc.paragraphs:
-        text = paragraph.text
-        sentiment = analyze_sentiment(text)
+    found_keywords = [keyterm for keyterm in keywords if any(keyword in text for keyword in keyterm.split())]
 
-        found_keywords = [keyword for keyword in keywords if keyword in text]
-
-        if found_keywords:
-            result_list.append([category, float(sentiment), text, ', '.join(found_keywords)])
-            category_items += 1
-            total_sentiment += float(sentiment)
-
-    if category_items > 0:
-        avg_sentiment = total_sentiment / category_items
-        result_list.insert(len(result_list) - category_items, [category, avg_sentiment, "", ', '.join(keywords)])
+    if found_keywords:
+        category = next((category for category, keyterm in categories_dict.items() if all(keyword in keyterm for keyword in found_keywords)), None)
+        result_list.append([text, float(sentiment), ', '.join(found_keywords), category])
 
 
 # Output results to excel sheet
