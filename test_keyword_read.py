@@ -17,12 +17,13 @@ def read_keyword_topics(sheet):
     return res_dict
 
 
+# Format output and save to excel sheet
 def export_to_excel(data, file_name):
     res_workbook = openpyxl.Workbook()
     sheet = res_workbook.active
     sheet.title = file_name
 
-    sheet.append(["Paragraph", "Sentiment", "Keywords", "Category"])
+    sheet.append(["Paragraph", "Sentiment", "Keywords", "Categories"])
     for row_data in data:
         sheet.append(row_data)
 
