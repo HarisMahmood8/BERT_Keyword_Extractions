@@ -14,7 +14,8 @@ model = BertForSequenceClassification.from_pretrained("bert-base-uncased")
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 # Load the DOCX file
-doc = docx.Document("equifax_cc.docx")
+doc = docx.Document("Equifax_Q3.docx")
+output_file = "sentiment_results_Q3.xlsx"
 
 # Download stopwords
 nltk.download('punkt')
@@ -63,8 +64,8 @@ for paragraph in doc.paragraphs:
         result_list.append([text, float(sentiment), ', '.join(found_keywords), ', '.join(categories_list)])
 
 # Output results to excel sheet
-export_to_excel(result_list, "sentiment_results.xlsx")
+export_to_excel(result_list, output_file)
 
 workbook.close()
 
-print("Sentiment analysis and keyword extraction completed. Results saved in 'sentiment_results.xlsx'.")
+print(f"Sentiment analysis and keyword extraction completed. Results saved in '{output_file}'.")
