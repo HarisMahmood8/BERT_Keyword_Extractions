@@ -1,7 +1,13 @@
 import docx
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
-from keywords import keywords  # Import the list of keywords from keywords.py
+import openpyxl
+# python program that reads the .xlsx file containing keywords & topics
+from test_keyword_read import read_keyword_topics, export_to_excel
+# used to get rid of stopwords when checking for keywords
+import nltk
+from nltk.corpus import stopwords
+from nltk import word_tokenize
 
 # Load the BERT model
 model = BertForSequenceClassification.from_pretrained("bert-base-uncased")
@@ -9,6 +15,12 @@ tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 # Load the DOCX file
 doc = docx.Document("equifax_cc.docx")
+
+# Download stopwords
+nltk.download('punkt')
+nltk.download('stopwords')
+stop_words = set(stopwords.words('english'))
+
 
 # Define a function for sentiment analysis
 def analyze_sentiment(text):
@@ -20,26 +32,39 @@ def analyze_sentiment(text):
     return sentiment_score
 
 
-# Load the list of keywords from keywords.py (assuming you have a keywords.py file)
-from keywords import keywords
+# For all found keywords, return a list of categories they fall under
+def get_categories(keywords_list, categories):
+    category_list = set()
+    for keyword in keywords_list:
+        for category in categories:
+            if keyword in categories.get(category):
+                category_list.add(category)
+    return category_list
 
-# Create a text document for storing the results
-result_file = open("sentiment_results.txt", "w")
 
-# Process the document
+# Get dictionary of keywords and topics
+workbook = openpyxl.load_workbook("keywords_topics.xlsx")
+categories_dict = read_keyword_topics(workbook["Key Words_Topics"])
+keywords = [item for sublist in categories_dict.values() for item in sublist]
+
+# Create a list storing results, which will be used to create the excel output
+result_list = []
+
+# Process the document for sentiment
 for paragraph in doc.paragraphs:
     text = paragraph.text
     sentiment = analyze_sentiment(text)
-    
-    # Check if any of the keywords are found in the paragraph
-    found_keywords = [keyword for keyword in keywords if keyword in text]
-    
-    # Write the paragraph, keywords, and sentiment to the result file
+    text_words = text.split()
+
+    found_keywords = [keyterm for keyterm in keywords if any(keyword in text_words and word_tokenize(keyword)[0].isalpha() and keyword.lower() not in stop_words for keyword in keyterm.split())]
+
     if found_keywords:
-        result_file.write(f"Paragraph: {text}\n")
-        result_file.write(f"Keywords: {', '.join(found_keywords)}\n")
-        result_file.write(f"Sentiment Score: {sentiment}\n\n")
+        categories_list = get_categories(found_keywords, categories_dict)
+        result_list.append([text, float(sentiment), ', '.join(found_keywords), ', '.join(categories_list)])
 
-result_file.close()
+# Output results to excel sheet
+export_to_excel(result_list, "sentiment_results.xlsx")
 
-print("Sentiment analysis and keyword extraction completed. Results saved in 'sentiment_results.txt'.")
+workbook.close()
+
+print("Sentiment analysis and keyword extraction completed. Results saved in 'sentiment_results.xlsx'.")
