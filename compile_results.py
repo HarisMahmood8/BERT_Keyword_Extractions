@@ -1,16 +1,16 @@
 import openpyxl
 
-name = "Equifax"
+name = input("Enter name of company: ")
+num_quarters = int(input("Enter number of quarters: "))
+workbooks = []
 
 # Open result spreadsheets
-workbook_1 = openpyxl.load_workbook("sentiment_results_Q1.xlsx")
-workbook_2 = openpyxl.load_workbook("sentiment_results_Q2.xlsx")
-workbook_3 = openpyxl.load_workbook("sentiment_results_Q3.xlsx")
+for Q in range(1, num_quarters+1):
+    workbook = openpyxl.load_workbook(f"sentiment_results_{name}_Q{Q}.xlsx")
+    workbooks.append(workbook)
 
 res_dict_categories = {}
 res_dict_keywords = {}
-
-workbooks = [workbook_1, workbook_2, workbook_3]
 
 # Iterate through each sheet
 for quarter in range(len(workbooks)):
@@ -57,22 +57,16 @@ for quarter in range(len(workbooks)):
 
     workbook.close()
 
-# Print results
-for category, scores in res_dict_categories.items():
-    print(f"{category}: Q1 = {scores[0]}, Q2 = {scores[1]}, Q3 = {scores[2]}")
-
-print("-----------------------")
-
-for keyword, scores in res_dict_keywords.items():
-    print(f"{keyword}: Q1 = {scores[0]}, Q2 = {scores[1]}, Q3 = {scores[2]}")
-
 # Export results to spreadsheet
 file_name = f"sentiment_results_{name}.xlsx"
 res_workbook = openpyxl.Workbook()
 sheet = res_workbook.active
 sheet.title = f"{name} Results"
 
-sheet.append(["Category", "Q1", "Q2", "Q3"])
+category_header = ["Category"]
+for Q in range(1, num_quarters+1):
+    category_header.append(f"Q{Q}")
+sheet.append(category_header)
 for category, scores in res_dict_categories.items():
     res_row = [category]
     for score in scores:
@@ -84,7 +78,10 @@ for category, scores in res_dict_categories.items():
 
 sheet.append([""])
 
-sheet.append(["Keyword", "Q1", "Q2", "Q3"])
+keyword_header = ["Keyword"]
+for Q in range(1, num_quarters+1):
+    keyword_header.append(f"Q{Q}")
+sheet.append(keyword_header)
 for keyword, scores in res_dict_keywords.items():
     res_row = [keyword]
     for score in scores:
