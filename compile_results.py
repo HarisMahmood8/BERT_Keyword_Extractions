@@ -45,14 +45,18 @@ for quarter in range(len(workbooks)):
         average = sum(values) / len(values)
 
         if category not in res_dict_categories.keys():
-            res_dict_categories[category] = [[], [], []]
+            res_dict_categories[category] = []
+            for Q in range(1, num_quarters+1):
+                res_dict_categories[category].append([])
         res_dict_categories[category][quarter].append(average)
 
     for keyword, values in sub_dict_keywords.items():
         average = sum(values) / len(values)
 
         if keyword not in res_dict_keywords:
-            res_dict_keywords[keyword] = [[], [], []]
+            res_dict_keywords[keyword] = []
+            for Q in range(1, num_quarters + 1):
+                res_dict_keywords[keyword].append([])
         res_dict_keywords[keyword][quarter].append(average)
 
     workbook.close()
