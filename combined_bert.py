@@ -14,7 +14,9 @@ model = BertForSequenceClassification.from_pretrained("bert-base-uncased")
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 # Load the DOCX file
-doc = docx.Document("equifax_cc.docx")
+quarter = "Q1"
+doc = docx.Document(f"Equifax_{quarter}.docx")
+output_file = f"sentiment_results_{quarter}.xlsx"
 
 # Download stopwords
 nltk.download('punkt')
@@ -54,17 +56,20 @@ result_list = []
 for paragraph in doc.paragraphs:
     text = paragraph.text
     sentiment = analyze_sentiment(text)
-    text_words = text.split()
+    text_sentences = text.split(". ")
 
-    found_keywords = [keyterm for keyterm in keywords if any(keyword in text_words and word_tokenize(keyword)[0].isalpha() and keyword.lower() not in stop_words for keyword in keyterm.split())]
+    for sentence in text_sentences:
+        text_words = sentence.split()
 
-    if found_keywords:
-        categories_list = get_categories(found_keywords, categories_dict)
-        result_list.append([text, float(sentiment), ', '.join(found_keywords), ', '.join(categories_list)])
+        found_keywords = [keyterm for keyterm in keywords if any(keyword in text_words and word_tokenize(keyword)[0].isalpha() and keyword.lower() not in stop_words for keyword in keyterm.split())]
+
+        if found_keywords:
+            categories_list = get_categories(found_keywords, categories_dict)
+            result_list.append([sentence, float(sentiment), ', '.join(found_keywords), ', '.join(categories_list)])
 
 # Output results to excel sheet
-export_to_excel(result_list, "sentiment_results.xlsx")
+export_to_excel(result_list, output_file)
 
 workbook.close()
 
-print("Sentiment analysis and keyword extraction completed. Results saved in 'sentiment_results.xlsx'.")
+print(f"Sentiment analysis and keyword extraction completed. Results saved in '{output_file}'.")
