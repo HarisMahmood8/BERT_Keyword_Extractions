@@ -7,22 +7,8 @@ from nltk.corpus import stopwords
 from nltk import word_tokenize
 from test_keyword_read import read_keyword_topics, export_to_excel
 
-model_name = "mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis"
-model = AutoModelForSequenceClassification.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-company = input("Enter name of company: ")
-number = int(input("Enter the quarter number: "))
-quarter = f"Q{number}"
-doc = Document(f"{company}_{quarter}.docx")
-output_file = f"sentiment_results_{company}_{quarter}.xlsx"
-
-nltk.download('punkt')
-nltk.download('stopwords')
-stop_words = set(stopwords.words('english'))
-
-
-def analyze_sentiment(text):
+def analyze_sentiment(text, model, tokenizer):
     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
     outputs = model(**inputs)
     logits = outputs.logits
@@ -39,30 +25,52 @@ def get_categories(keywords_list, categories):
     return category_list
 
 
-workbook = openpyxl.load_workbook("keywords_topics.xlsx")
-categories_dict = read_keyword_topics(workbook["Key Words_Topics"])
-keywords = [item for sublist in categories_dict.values() for item in sublist]
+def run_sentiment(file):
+    model_name = "mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis"
+    model = AutoModelForSequenceClassification.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-result_list = []
+    # company = input("Enter name of company: ")
+    # number = int(input("Enter the quarter number: "))
+    # quarter = f"Q{number}"
+    # doc = Document(f"{company}_{quarter}.docx")
+    doc = Document(f'{file}.docx')
+    # output_file = f"sentiment_results_{company}_{quarter}.xlsx"
+    output_file = f'sentiment_results_{file}.xlsx'
 
-for paragraph in doc.paragraphs:
-    text = paragraph.text
-    text_sentences = text.split(". ")
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    stop_words = set(stopwords.words('english'))
 
-    for sentence in text_sentences:
-        sentiment = analyze_sentiment(sentence)
-        text_words = sentence.split()
+    workbook = openpyxl.load_workbook("keywords_topics.xlsx")
+    categories_dict = read_keyword_topics(workbook["Key Words_Topics_Streamlined"])
+    keywords = [item for sublist in categories_dict.values() for item in sublist]
 
-        found_keywords = [keyterm for keyterm in keywords if any(keyword in text_words and word_tokenize(
-            keyword)[0].isalpha() and keyword.lower() not in stop_words for keyword in keyterm.split())]
+    result_list = []
 
-        if found_keywords:
-            categories_list = get_categories(found_keywords, categories_dict)
-            result_list.append([text, float(sentiment), ', '.join(
-                found_keywords), ', '.join(categories_list)])
+    for paragraph in doc.paragraphs:
+        text = paragraph.text
+        text_sentences = text.split(". ")
 
-export_to_excel(result_list, output_file)
+        for sentence in text_sentences:
+            sentiment = analyze_sentiment(sentence, model, tokenizer)
+            text_words = sentence.split()
 
-workbook.close()
+            found_keywords = [keyterm for keyterm in keywords if any(keyword in text_words and word_tokenize(
+                keyword)[0].isalpha() and keyword.lower() not in stop_words for keyword in keyterm.split())]
 
-print(f"Sentiment analysis and keyword extraction completed. Results saved in '{output_file}'.")
+            if found_keywords:
+                categories_list = get_categories(found_keywords, categories_dict)
+                result_list.append([text, float(sentiment), ', '.join(
+                    found_keywords), ', '.join(categories_list)])
+
+    export_to_excel(result_list, output_file)
+
+    workbook.close()
+
+    print(f"Sentiment analysis and keyword extraction completed. Results saved in '{output_file}'.")
+
+
+if __name__ == "__main__":
+    file_name = input("Enter call document file name, without the extension: ")
+    run_sentiment(file_name)
