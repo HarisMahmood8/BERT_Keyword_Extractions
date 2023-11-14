@@ -1,12 +1,32 @@
 import openpyxl
+import roberta_model
 
-name = input("Enter name of company: ")
-num_quarters = int(input("Enter number of quarters: "))
+# name = input("Enter name of company: ")
+# num_quarters = int(input("Enter number of quarters: "))
+filenames = ["Adidas_Q3_2021",
+             "Adidas_Y_2021",
+             "Adidas_Q1_2022",
+             "Adidas_Q2_2022",
+             "Adidas_Q3_2022",
+             "Adidas_Y_2022",
+             "Adidas_Q1_2023",
+             "Adidas_Q2_2023"]
 workbooks = []
+quarters = []
+company = filenames[0].split("_")[0]
 
 # Open result spreadsheets
-for Q in range(1, num_quarters+1):
-    workbook = openpyxl.load_workbook(f"sentiment_results_{name}_Q{Q}.xlsx")
+# for Q in range(1, num_quarters+1):
+    # workbook = openpyxl.load_workbook(f"sentiment_results_{name}_Q{Q}.xlsx")
+    # workbooks.append(workbook)
+
+for name in filenames:
+    print("Running sentiment on", name)
+    roberta_model.run_sentiment(name)
+
+    quarter = name.replace(f"{company}_", "")
+    quarters.append(quarter)
+    workbook = openpyxl.load_workbook(f'sentiment_results_{name}.xlsx')
     workbooks.append(workbook)
 
 res_dict_categories = {}
@@ -46,7 +66,7 @@ for quarter in range(len(workbooks)):
 
         if category not in res_dict_categories.keys():
             res_dict_categories[category] = []
-            for Q in range(1, num_quarters+1):
+            for Q in range(1, len(filenames)+1):
                 res_dict_categories[category].append([])
         res_dict_categories[category][quarter].append(average)
 
@@ -55,21 +75,21 @@ for quarter in range(len(workbooks)):
 
         if keyword not in res_dict_keywords:
             res_dict_keywords[keyword] = []
-            for Q in range(1, num_quarters + 1):
+            for Q in range(1, len(filenames)+1):
                 res_dict_keywords[keyword].append([])
         res_dict_keywords[keyword][quarter].append(average)
 
     workbook.close()
 
 # Export results to spreadsheet
-file_name = f"sentiment_results_{name}.xlsx"
+file_name = f"sentiment_results_{company}.xlsx"
 res_workbook = openpyxl.Workbook()
 sheet = res_workbook.active
-sheet.title = f"{name} Results"
+sheet.title = f"{company} Results"
 
 category_header = ["Category"]
-for Q in range(1, num_quarters+1):
-    category_header.append(f"Q{Q}")
+for Q in quarters:
+    category_header.append(Q)
 sheet.append(category_header)
 for category, scores in res_dict_categories.items():
     res_row = [category]
@@ -83,8 +103,8 @@ for category, scores in res_dict_categories.items():
 sheet.append([""])
 
 keyword_header = ["Keyword"]
-for Q in range(1, num_quarters+1):
-    keyword_header.append(f"Q{Q}")
+for Q in quarters:
+    keyword_header.append(Q)
 sheet.append(keyword_header)
 for keyword, scores in res_dict_keywords.items():
     res_row = [keyword]
