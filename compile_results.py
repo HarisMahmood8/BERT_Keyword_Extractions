@@ -55,7 +55,7 @@ def compile_results(filenames):
                     sub_dict_keywords[key] = []
                 sub_dict_keywords[key].append(value)
 
-        # Get average sentiment for each category/keyword and add them to the result dictionary
+        # Get average sentiment for each category\keyword and add them to the result dictionary
         for category, values in sub_dict_categories.items():
             average = sum(values) / len(values)
 
@@ -116,12 +116,25 @@ def compile_results(filenames):
 
 
 if __name__ == "__main__":
-    filenames = ["WSPGlobal_Q3_2021",
-                 "WSPGlobal_Q4_2021",
-                 "WSPGlobal_Q1_2022",
-                 "WSPGlobal_Q2_2022",
-                 "WSPGlobal_Q3_2022",
-                 "WSPGlobal_Q4_2022",
-                 "WSPGlobal_Q1_2023",
-                 "WSPGlobal_Q2_2023"]
+    filenames = ["TMO_Q2_2018",
+                 "TMO_Q3_2018",
+                 "TMO_Q4_2018",
+                 "TMO_Q1_2019",
+                 "TMO_Q2_2019",
+                 "TMO_Q3_2019",
+                 "TMO_Q4_2019",
+                 "TMO_Q1_2020",
+                 "TMO_Q2_2020",
+                 "TMO_Q3_2020",
+                 "TMO_Q4_2020",
+                 "TMO_Q1_2021",
+                 "TMO_Q2_2021",
+                 "TMO_Q3_2021",
+                 "TMO_Q4_2021",
+                 "TMO_Q1_2022",
+                 "TMO_Q2_2022",
+                 "TMO_Q3_2022",
+                 "TMO_Q4_2022",
+                 "TMO_Q1_2023",
+                 "TMO_Q2_2023"]
     compile_results(filenames)

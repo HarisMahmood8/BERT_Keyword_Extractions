@@ -52,6 +52,18 @@ def run_sentiment(file):
         text = paragraph.text
         text_sentences = text.split(". ")
 
+        # Get paragraph sentiment
+        #sentiment = analyze_sentiment(text, model, tokenizer)
+        #text_words = text.split()
+
+        #found_keywords = [keyterm for keyterm in keywords if any(keyword in text_words and word_tokenize(
+        #    keyword)[0].isalpha() and keyword.lower() not in stop_words for keyword in keyterm.split())]
+
+        #if found_keywords:
+        #    categories_list = get_categories(found_keywords, categories_dict)
+        #    result_list.append([text, float(sentiment), ', '.join(found_keywords), ', '.join(categories_list)])
+
+        # Get sentence sentiment
         for sentence in text_sentences:
             sentiment = analyze_sentiment(sentence, model, tokenizer)
             text_words = sentence.split()
@@ -61,7 +73,7 @@ def run_sentiment(file):
 
             if found_keywords:
                 categories_list = get_categories(found_keywords, categories_dict)
-                result_list.append([text, float(sentiment), ', '.join(
+                result_list.append([sentence, float(sentiment), ', '.join(
                     found_keywords), ', '.join(categories_list)])
 
     export_to_excel(result_list, output_file)
